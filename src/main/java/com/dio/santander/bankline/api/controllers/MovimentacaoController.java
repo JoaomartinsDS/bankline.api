@@ -2,6 +2,7 @@ package com.dio.santander.bankline.api.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,9 @@ import com.dio.santander.bankline.api.service.MovimentacaoService;
 @RestController
 @RequestMapping("/movimentacoes")
 public class MovimentacaoController {
+	@Autowired
 	private MovimentacaoRepository repository;
+	@Autowired
 	private MovimentacaoService service;
 	@GetMapping
 	public List<Movimentacao> findAll(){
